@@ -15,6 +15,8 @@ const Popularjobs = () => {
   )
   
   console.log(data)
+  const handleCardPress = () => {
+  }
 
 
   return (
@@ -34,9 +36,12 @@ const Popularjobs = () => {
         <Text>Something went wrong</Text>
         ) : (
           <FlatList 
-            data={[1,2,3,4,5,6,7,8]}
+            // data={[1,2,3,4,5,6,7,8]}
+            data={data}
             renderItem={({ item }) => (
-              <PopularJobCard item={item}/>
+              <PopularJobCard item={item}
+                handleCardPress={handleCardPress}
+              />
             )}
             keyExtractor={item => item?.job_id}
             contentContainerStyle={{ columnGap: SIZES.small }}
